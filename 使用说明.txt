@@ -1,0 +1,30 @@
+创建一个数据库 dict
+create database dict charset=utf8;
+创建一个而数据表 words
+ id   word  mean
+
+create table words (id int primary key auto_increment,
+word varchar(30),
+mean varchar(512));
+
+
+
+ create table user (
+        id int primary key auto_increment,
+        name varchar(30) not null,
+        passwd char(20) not null);
+
+
+
+
+ create table history (
+        id int primary key auto_increment,
+        word varchar(30),
+        time datetime default now(),
+        user_id int,
+        foreign key (user_id) references user(id));
+
+
+
+先在 mysql 中创建数据库和表,
+先运行服务端在运行客户端
